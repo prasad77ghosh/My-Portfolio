@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
   House,
@@ -8,7 +7,6 @@ import {
   NotebookPen,
   Settings,
 } from "lucide-react";
-import Image from "next/image";
 
 export function Navbar() {
   const links = [
