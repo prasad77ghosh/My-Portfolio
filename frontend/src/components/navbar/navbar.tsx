@@ -1,3 +1,5 @@
+"use client";
+
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
   House,
@@ -7,61 +9,62 @@ import {
   NotebookPen,
   Settings,
 } from "lucide-react";
-import { headers } from "next/headers";
+import { usePathname } from "next/navigation";
 
-export async function Navbar() {
-  const headerList = await headers();
-  const pathname = headerList.get("x-current-path");
+export function Navbar() {
+  const pathname = usePathname();
 
-  console.log("PATHNAME", pathname);
+  const getGlowClass = (path: string): string => {
+    return path === pathname
+      ? "text-glow dark:text-glow"
+      : "text-neutral-500 dark:text-neutral-300";
+  };
 
   const links = [
     {
       title: "Home",
-      icon: (
-        <House className="h-full w-full text-neutral-500 dark:text-neutral-300 " />
-      ),
+      icon: <House className={`h-full w-full ${getGlowClass("/")}`} />,
       href: "/",
     },
-
     {
       title: "About",
-      icon: (
-        <User className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
+      icon: <User className={`h-full w-full ${getGlowClass("/about")}`} />,
       href: "/about",
     },
     {
       title: "Portfolio",
       icon: (
-        <BriefcaseBusiness className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <BriefcaseBusiness
+          className={`h-full w-full ${getGlowClass("/portfolio")}`}
+        />
       ),
       href: "/portfolio",
     },
-
     {
       title: "Blogs",
-      icon: (
-        <FileText className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "blogs",
+      icon: <FileText className={`h-full w-full ${getGlowClass("/blogs")}`} />,
+      href: "/blogs",
     },
-
     {
       title: "Notes",
       icon: (
-        <NotebookPen className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <NotebookPen className={`h-full w-full ${getGlowClass("/notes")}`} />
       ),
       href: "/notes",
     },
     {
       title: "Setting",
       icon: (
-        <Settings className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <Settings
+          className={`h-full w-full ${getGlowClass(
+            "#"
+          )} animate-spin duration-[2000ms] ease-linear`}
+        />
       ),
       href: "#",
     },
   ];
+
   return (
     <div className="flex items-center justify-center w-full fixed bottom-13">
       <FloatingDock mobileClassName="translate-y-20" items={links} />

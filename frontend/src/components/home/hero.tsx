@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export const HeroSection = () => (
-  <div className="w-full h-full py-10 lg:py-20">
+  <div className="w-full h-screen py-10 lg:py-20 overflow-hidden">
     <div className="container mx-auto">
       <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-2">
         <div className="flex gap-4 flex-col">
