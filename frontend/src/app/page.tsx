@@ -1,9 +1,9 @@
-import { SettingModal } from "@/components/navbar/setting/setting-modal";
+import { HeroSection } from "@/components/home/hero";
 
 export default function Home() {
   return (
-    <div>
-      <h1>hlo there!!</h1>
+    <div className="h-screen min-h-screen overflow-y-auto">
+      <HeroSection />
     </div>
   );
 }

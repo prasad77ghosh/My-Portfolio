@@ -7,15 +7,21 @@ import {
   NotebookPen,
   Settings,
 } from "lucide-react";
+import { headers } from "next/headers";
 
-export function Navbar() {
+export async function Navbar() {
+  const headerList = await headers();
+  const pathname = headerList.get("x-current-path");
+
+  console.log("PATHNAME", pathname);
+
   const links = [
     {
       title: "Home",
       icon: (
-        <House className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <House className="h-full w-full text-neutral-500 dark:text-neutral-300 " />
       ),
-      href: "#",
+      href: "/",
     },
 
     {
@@ -23,14 +29,14 @@ export function Navbar() {
       icon: (
         <User className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/about",
     },
     {
       title: "Portfolio",
       icon: (
         <BriefcaseBusiness className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/portfolio",
     },
 
     {
@@ -38,7 +44,7 @@ export function Navbar() {
       icon: (
         <FileText className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "blogs",
     },
 
     {
@@ -46,7 +52,7 @@ export function Navbar() {
       icon: (
         <NotebookPen className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/notes",
     },
     {
       title: "Setting",
@@ -57,7 +63,7 @@ export function Navbar() {
     },
   ];
   return (
-    <div className="flex items-center justify-center w-full fixed bottom-20">
+    <div className="flex items-center justify-center w-full fixed bottom-13">
       <FloatingDock mobileClassName="translate-y-20" items={links} />
     </div>
   );

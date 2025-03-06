@@ -13,6 +13,7 @@ import {
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { SettingModal } from "../navbar/setting/setting-modal";
+import { usePathname } from "next/navigation";
 
 export const FloatingDock = ({
   items,
@@ -39,6 +40,7 @@ const FloatingDockMobile = ({
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
@@ -206,7 +208,7 @@ function IconContainer({
         ) : (
           <motion.div
             style={{ width: widthIcon, height: heightIcon }}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center "
           >
             {icon}
           </motion.div>
