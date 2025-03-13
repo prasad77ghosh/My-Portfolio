@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 
 @plugin "tailwindcss-animate";
 
@@ -7,6 +8,7 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-rock: "Rock Salt", cursive;
 }
 
 :root {
