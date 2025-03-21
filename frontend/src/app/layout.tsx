@@ -29,7 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SplashScreenProvider>{children}</SplashScreenProvider>
+        <SplashScreenProvider>
+          <Navbar />
+          {children}
+        </SplashScreenProvider>
       </body>
     </html>
   );

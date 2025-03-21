@@ -5,13 +5,14 @@ import React, { useEffect, useState } from "react";
 
 const SplashScreenProvider = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
-  const [showSplash, setShowSplash] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
     const hasVisited = sessionStorage.getItem("hasVisited");
     if (!hasVisited) {
-      setShowSplash(true);
       sessionStorage.setItem("hasVisited", "true");
+    } else {
+      setShowSplash(false);
     }
   }, []);
 
@@ -23,7 +24,12 @@ const SplashScreenProvider = ({ children }: { children: React.ReactNode }) => {
       return () => clearTimeout(timer);
     }
   }, [showSplash]);
-  return <>{showSplash ? <SplashScreen /> : children}</>;
+
+  if (showSplash) {
+    return <SplashScreen />;
+  }
+
+  return <>{children}</>;
 };
 
 export default SplashScreenProvider;
