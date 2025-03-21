@@ -4,8 +4,7 @@ import { HeroSection } from "@/components/home/hero/hero";
 export default function Home() {
   return (
     <div className="h-screen min-h-screen overflow-y-auto">
-      {/* <HeroSection /> */}
-      <SplashScreen />
+      <h1>Home Page</h1>
     </div>
   );
 }
