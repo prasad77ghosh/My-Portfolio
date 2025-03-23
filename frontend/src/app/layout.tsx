@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SplashScreenProvider from "@/contexts/splash-screen-provider";
-import MainNavbar from "@/components/global/navbar/MainNavbar";
+import MainNavbar from "@/components/global/navbar/main-navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +30,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SplashScreenProvider>
-          <MainNavbar />
-          {children}
+          <div className="h-screen w-screen overflow-y-auto relative">
+            <MainNavbar />
+            {children}
+          </div>
         </SplashScreenProvider>
       </body>
     </html>

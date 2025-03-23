@@ -25,7 +25,7 @@ const SplashScreen = () => {
         <img
           src="./assets/images/avatar.png"
           alt="avatar"
-          className="w-[650px] h-[650px] drop-shadow-[0_0_10px_rgba(251,146,60,0.7)]"
+          className="w-[690px] h-[690px] drop-shadow-[0_0_10px_rgba(251,146,60,0.7)]"
         />
       </motion.div>
       <motion.div

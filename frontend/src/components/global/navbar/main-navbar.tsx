@@ -52,7 +52,7 @@ const MainNavbar = () => {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="w-full h-12 flex items-center px-10 border-b-[0.1px] border-b-gray-600"
+      className="w-full h-14 flex items-center px-10 border-b-[0.1px] border-b-gray-600 fixed top-0 left-0"
     >
       <div className="basis-[15%] border-r-[0.5px] border-b-gray-600 h-full flex items-center">
         <h1 className="text-xl font-rock ml-6">Prasad Ghosh</h1>
