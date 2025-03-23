@@ -15,7 +15,7 @@ const SplashScreen = () => {
   };
 
   return (
-    <WavyBackground className="w-full h-full flex justify-center gap-20">
+    <WavyBackground className="w-full h-full flex justify-center gap-20 overflow-hidden">
       <motion.div
         initial={{ x: -200, opacity: 0, filter: "blur(10px) grayscale(100%)" }}
         animate={{ x: 0, opacity: 1, filter: "blur(0) grayscale(0%)" }}
