@@ -1,7 +1,10 @@
+import { HeroSection } from "@/components/home/hero/hero";
+
 export default function Home() {
   return (
-    <div className="h-screen min-h-screen overflow-y-auto">
-      <h1>Home Page</h1>
+    <div>
+      {/* <HeroSection /> */}
+      {/* <h1>Hyy I am prasad</h1> */}
     </div>
   );
 }
