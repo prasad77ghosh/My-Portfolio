@@ -43,7 +43,7 @@ const MainNavbar = () => {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
-        className="w-full h-12 flex items-center px-4 lg:px-10 border-b border-gray-600 fixed top-0 left-0 bg-black z-50"
+        className="w-full h-12 flex items-center px-4 lg:px-10 border-b border-gray-600 fixed top-0 left-0 z-50"
       >
         {/* Brand */}
         <div className="basis-[50%] md:basis-[15%] border-r border-gray-600 h-full flex items-center">
