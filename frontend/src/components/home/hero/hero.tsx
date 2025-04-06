@@ -1,5 +1,4 @@
-import { DotPattern } from "@/components/magicui/dot-pattern";
-import TypeWriter from "./type-writer";
+import { TextEffect } from "./text-effect";
 
 export const HeroSection = () => {
   return (
@@ -13,7 +12,7 @@ export const HeroSection = () => {
           />
         </div>
         <div className="basis-[55%] flex items-center justify-center">
-          <TypeWriter />
+          <TextEffect />
         </div>
       </div>
     </>
